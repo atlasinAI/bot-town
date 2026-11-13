@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="theme-color" content="#0e1a12" />
+    <title>Bot 小镇</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <script type="module" crossorigin src="./assets/index-bn3YvVDj.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DDy8BHPw.css">
+  </head>
+  <body>
+    <div id="app">
+      <div id="game-container"></div>
+
+      <div id="title-screen">
+        <div class="panel title-card">
+          <h1>Bot 小镇</h1>
+          <p class="sub">走进楼里，认识每一位 Bot</p>
+          <div class="help">
+            <div>电脑：方向键或 WASD 走路，靠近门口或 Bot 后按 E / 空格，也可以直接点。</div>
+            <div>手机：用左下角摇杆移动，点右下角「互动」，或直接点门口和 Bot。</div>
+            <div>评分只保存在你这台设备的浏览器里。</div>
+          </div>
+          <button class="btn gold" id="start-btn" type="button">开始探索</button>
+        </div>
+      </div>
+
+      <div class="overlay" id="hud" hidden>
+        <div id="hud-top">
+          <div style="display:flex;gap:8px;align-items:center;">
+            <div class="place-chip" id="place-chip">小镇广场</div>
+            <button class="btn ghost" id="codex-btn" type="button">图鉴</button>
+          </div>
+          <div id="hint"></div>
+        </div>
+
+        <div id="joystick" aria-hidden="true">
+          <div class="base"></div>
+          <div class="knob" id="joy-knob"></div>
+        </div>
+        <button class="btn" id="interact-btn" type="button" disabled>互动</button>
+      </div>
+
+      <aside id="bot-card" class="panel" hidden>
+        <h2 id="card-name"></h2>
+        <p class="desc" id="card-desc"></p>
+        <div class="stars" id="card-stars"></div>
+        <div class="card-actions">
+          <button class="btn import" id="import-btn" type="button">导入</button>
+          <button class="btn ghost" id="card-close" type="button">关闭</button>
+        </div>
+        <p class="fineprint">导入需要已安装 Grok Bot。评分只保存在本机浏览器，换设备或清除数据后不会同步。</p>
+      </aside>
+
+      <div id="codex">
+        <div class="panel codex-panel">
+          <div class="codex-head">
+            <h2>图鉴</h2>
+            <button class="btn ghost" id="codex-close" type="button">关闭</button>
+          </div>
+          <p class="progress" id="codex-progress"></p>
+          <div class="tabs" id="codex-tabs"></div>
+          <div class="codex-grid" id="codex-grid"></div>
+        </div>
+      </div>
+
+      <div id="celebrate" aria-hidden="true">
+        <div class="banner" id="celebrate-text"></div>
+      </div>
+    </div>
+  </body>
+</html>
